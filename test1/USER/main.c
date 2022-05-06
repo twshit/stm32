@@ -25,22 +25,22 @@ int main(void)
     while (1)
     {
 
-//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_RESET);//LED1 ×ÏÉ«µÆÁÁ	
-//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_RESET);//LED2 À¶É«µÆÁÁ
-//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_SET);//LED2 À¶É«µÆÃð
-//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);//LED3 ÂÌÉ«µÆÁÁ
-//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);//LED3 ÂÌÉ«µÆÃð
-//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);//LED4 »ÆÂÌÉ«µÆÁÁ
-//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);//LED4 »ÆÂÌÉ«µÆÃð
-//				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);//LED5 »ÆÉ«µÆÃð
+//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET);//LED1 ×ÏÉ«µÆÁÁ
+//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_RESET);//LED1 ×ÏÉ«µÆÃð			
+//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_SET);//LED2 À¶É«µÆÁÁ
+//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_RESET);//LED2 À¶É«µÆÃð
+//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);//LED3 ÂÌÉ«µÆÁÁ
+//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);//LED3 ÂÌÉ«µÆÃð
+//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);//LED4 »ÆÂÌÉ«µÆÁÁ
+//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);//LED4 »ÆÂÌÉ«µÆÃð
 //				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);//LED5 »ÆÉ«µÆÁÁ
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, GPIO_PIN_SET);//LED6 éÙÉ«µÆÁÁ
-        delay_ms(500);
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, GPIO_PIN_RESET);//LED6 éÙÉ«µÆÃð
-				delay_ms(500);
-				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);//LED7 ºìÉ«µÆÁÁ
-//				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);//LED7 ºìÉ«µÆÃð
-//				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);//LED8 °×É«µÆÁÁ
+//				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);//LED5 »ÆÉ«µÆÃð
+//				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, GPIO_PIN_SET);//LED6 éÙÉ«µÆÁÁ
+//				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, GPIO_PIN_RESET);//LED6 éÙÉ«µÆÃð
+//				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);//LED7 ºìÉ«µÆÁÁ
+//				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);//LED7 ºìÉ«µÆÃð
+//				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);//LED8 °×É«µÆÁÁ
+//				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);//LED8 °×É«µÆÃð
     }
 }
 
