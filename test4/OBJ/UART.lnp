@@ -20,6 +20,6 @@
 "..\obj\led.o"
 "..\obj\key.o"
 --strict --scatter "..\OBJ\UART.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\UART.map" -o ..\OBJ\UART.axf
