@@ -41,7 +41,7 @@ void LED_Init(void)
 	GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7,GPIO_PIN_RESET);	//PB0~7置1，默认初始化后灯灭
 	
     HAL_GPIO_Init(GPIOB,&GPIO_Initure);
-	__HAL_RCC_GPIOA_CLK_ENABLE();           	//开启GPIOC时钟
+	__HAL_RCC_GPIOA_CLK_ENABLE();           	//开启GPIOA时钟
 	
     GPIO_Initure.Pin=GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|
 	                 GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;//PA0~7

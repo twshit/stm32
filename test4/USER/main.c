@@ -52,7 +52,7 @@ int main(void)
 
             if (times % 200 == 0)printf("请输入数据,以回车键结束\r\n");
 
-            if (times % 30 == 0)LED0 = !LED0; //闪烁LED,提示系统正在运行.
+//            if (times % 30 == 0)LED5 = !LED5; //闪烁LED,提示系统正在运行.
 
             delay_ms(10);
         }
