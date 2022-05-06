@@ -23,7 +23,8 @@ int main(void)
     Stm32_Clock_Init(RCC_PLL_MUL9); //设置时钟,72M
     delay_init(72);                 //初始化延时函数
     uart_init(115200);				//初始化串口115200
-    LED_Init();                     //初始化LED
+    LED_Init();
+	//初始化LED
     KEY_Init();						//初始化按键
 
     while (1)
