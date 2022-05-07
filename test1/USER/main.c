@@ -2,6 +2,7 @@
 #include "delay.h"
 #include "usart.h"
 #include "led.h"
+//#include "dac.h"
 /************************************************
  ALIENTEK NANO板STM32F103开发板实验1
  跑马灯实验-HAL库版本
@@ -17,14 +18,16 @@
 int main(void)
 {
 
+		u16 dacval=0;
     HAL_Init();                    	//初始化HAL库
     Stm32_Clock_Init(RCC_PLL_MUL9); //设置时钟,72M
     delay_init(72);                 //初始化延时函数
     LED_Init();                     //初始化LED
-
+//		Dac1_Init();				//DAC初始化
     while (1)
     {
-
+//					dacval++;
+//					HAL_DAC_SetValue(&DAC1_Handler,DAC_CHANNEL_1,DAC_ALIGN_12B_R,dacval);
 //				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET);//LED1 紫色灯亮
 //				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_RESET);//LED1 紫色灯灭			
 //				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_SET);//LED2 蓝色灯亮
@@ -41,6 +44,7 @@ int main(void)
 //				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);//LED7 红色灯灭
 //				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);//LED8 白色灯亮
 //				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);//LED8 白色灯灭
+HAL_GPIO_WritePin(GPIOC, GPIO_PIN_15, GPIO_PIN_RESET);//led0亮
     }
 }
 

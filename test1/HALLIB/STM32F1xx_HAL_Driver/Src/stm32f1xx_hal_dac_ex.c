@@ -68,7 +68,7 @@
 #ifdef HAL_DAC_MODULE_ENABLED
 #if defined (STM32F100xB) || defined (STM32F100xE) || defined (STM32F101xE) || defined (STM32F101xG) || defined (STM32F103xE) || defined (STM32F103xG) || defined (STM32F105xC) || defined (STM32F107xC)
 
-/* Private typedef -----------------------------------------------------------*/
+/* Private t	ypedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
