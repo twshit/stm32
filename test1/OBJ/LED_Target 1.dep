@@ -1,6 +1,6 @@
 Dependencies for Project 'LED', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main.c)(0x62762861)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\CORE -I ..\HALLIB\STM32F1xx_HAL_Driver\Inc -I ..\HARDWARE\LED -I ..\HARDWARE\DAC -I ..\HALLIB\STM32F1xx_HAL_Driver\Src --C99-I.\RTE\_Target_1-ID:\Users\tangw\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_MD -DUSE_HAL_DRIVER -DUSE_HAL_LEGACY -DSTM32F103xB-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x627B5B92)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\CORE -I ..\HALLIB\STM32F1xx_HAL_Driver\Inc -I ..\HARDWARE\LED -I ..\HARDWARE\DAC -I ..\HALLIB\STM32F1xx_HAL_Driver\Src --C99-I.\RTE\_Target_1-ID:\Users\tangw\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_MD -DUSE_HAL_DRIVER -DUSE_HAL_LEGACY -DSTM32F103xB-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\sys\sys.h)(0x59254212)
 I (..\USER\stm32f1xx.h)(0x5AEC091D)
 I (..\USER\stm32f103xb.h)(0x5B1F6AA4)
@@ -228,7 +228,7 @@ I (..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd.h)(0x591B03DC)
 I (..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_usb.h)(0x591B03DA)
 I (..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd_ex.h)(0x591B03DA)
 I (..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_hcd.h)(0x591B03DC)
-F (..\HARDWARE\LED\led.c)(0x627627BB)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\CORE -I ..\HALLIB\STM32F1xx_HAL_Driver\Inc -I ..\HARDWARE\LED -I ..\HARDWARE\DAC -I ..\HALLIB\STM32F1xx_HAL_Driver\Src --C99-I.\RTE\_Target_1-ID:\Users\tangw\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_MD -DUSE_HAL_DRIVER -DUSE_HAL_LEGACY -DSTM32F103xB-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+F (..\HARDWARE\LED\led.c)(0x62763006)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\CORE -I ..\HALLIB\STM32F1xx_HAL_Driver\Inc -I ..\HARDWARE\LED -I ..\HARDWARE\DAC -I ..\HALLIB\STM32F1xx_HAL_Driver\Src --C99-I.\RTE\_Target_1-ID:\Users\tangw\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_MD -DUSE_HAL_DRIVER -DUSE_HAL_LEGACY -DSTM32F103xB-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
 I (..\HARDWARE\LED\led.h)(0x5AED679C)
 I (..\SYSTEM\sys\sys.h)(0x59254212)
 I (..\USER\stm32f1xx.h)(0x5AEC091D)
