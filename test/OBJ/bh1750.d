@@ -2,7 +2,7 @@
 ..\obj\bh1750.o: ..\HARDWARE\BH1750\BH1750.h
 ..\obj\bh1750.o: ..\USER\stm32f10x.h
 ..\obj\bh1750.o: ..\CORE\core_cm3.h
-..\obj\bh1750.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\bh1750.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\bh1750.o: ..\USER\system_stm32f10x.h
 ..\obj\bh1750.o: ..\USER\stm32f10x_conf.h
 ..\obj\bh1750.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

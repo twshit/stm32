@@ -3,7 +3,7 @@
 ..\obj\ads1271.o: ..\SYSTEM\sys\sys.h
 ..\obj\ads1271.o: ..\USER\stm32f10x.h
 ..\obj\ads1271.o: ..\CORE\core_cm3.h
-..\obj\ads1271.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ads1271.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\ads1271.o: ..\USER\system_stm32f10x.h
 ..\obj\ads1271.o: ..\USER\stm32f10x_conf.h
 ..\obj\ads1271.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
