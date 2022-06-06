@@ -159,7 +159,7 @@ int main(void)
 					USART_SendData(USART1, 0x01);
 					while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET)
 						;
-					USART_SendData(USART1, USART_RX_BUF[3]);
+					USART_SendData(USART1, 0x00);
 					while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET)
 						;
 					USART_SendData(USART1, 0x00);
