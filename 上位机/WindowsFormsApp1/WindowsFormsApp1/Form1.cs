@@ -33,13 +33,7 @@ namespace WindowsFormsApp1
             f3.Show();
         }
 
-        private void btn_guangpu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form4 f4 = new Form4();
-            f4.Owner = this;
-            f4.Show();
-        }
+      
 
         private void btn_shijian_Click(object sender, EventArgs e)
         {

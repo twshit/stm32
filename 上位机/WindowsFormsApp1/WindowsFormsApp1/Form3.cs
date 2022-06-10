@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
+        int count = 0;
         public Form3()
         {
             InitializeComponent();
@@ -29,7 +31,17 @@ namespace WindowsFormsApp1
 
         private void dianzuzhi_input_Click(object sender, EventArgs e)
         {
-
+            if (serialPort1.IsOpen)
+            {
+                byte[] sendData = null;
+                string str = "AA 01 08 00 00 0D";
+                sendData = strToHexByte(str.Trim());
+                serialPort1.Write(sendData, 0, sendData.Length);//发送信息
+            }
+            else
+            {
+                MessageBox.Show("串口未打开", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
@@ -163,6 +175,128 @@ namespace WindowsFormsApp1
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
             serialPort1.Close();
+        }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+        
+            byte[] ReDatas = new byte[serialPort1.BytesToRead];
+            serialPort1.Read(ReDatas, 0, ReDatas.Length);//读取数据
+            string recv1 = "";
+            string recv2 = "";
+            if (ReDatas.Length == 8)
+            {
+                string str1 = ReDatas[0].ToString();
+                string str2 = ReDatas[1].ToString();
+                if (int.Parse(str1) != 0)
+                {
+                    int temp = int.Parse(str1) * 256 + int.Parse(str2);
+                    recv1 = temp.ToString();
+                }
+                else
+                {
+                    int temp = int.Parse(str2);
+                    recv1 = temp.ToString();
+                }
+                string str3 = ReDatas[4].ToString();
+                string str4 = ReDatas[5].ToString();
+                if (int.Parse(str3) != 0)
+                {
+                    int temp = int.Parse(str3) * 256 + int.Parse(str4);
+                    temp = temp * 10;
+                    recv2 = temp.ToString();
+                }
+                else
+                {
+                    int temp = int.Parse(str4);
+                    temp = temp * 10;
+                    recv2 = temp.ToString();
+                }
+                Addlist(recv1, recv2);
+            }
+           
+        }
+        private void Addlist(string content1,string content2)
+        {
+            this.BeginInvoke(new MethodInvoker(delegate
+            {
+                int index = this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[index].Cells[0].Value = count++;
+                this.dataGridView1.Rows[index].Cells[3].Value = content2;
+                this.dataGridView1.Rows[index].Cells[2].Value = content1;
+                this.dataGridView1.Rows[index].Cells[1].Value = this.comboBox3.Text;
+            }));
+        }
+        static string GetBytesString(byte[] bytes, int index, int count, string sep)
+        {
+            var sb = new StringBuilder();
+            for (int i = index; i < count - 1; i++)
+            {
+                sb.Append(bytes[i].ToString("X2") + sep);
+            }
+            sb.Append(bytes[index + count - 1].ToString("X2"));
+            return sb.ToString();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (DataTableToTxt(dataGridView1, "光照特性.txt", ' '))
+            {
+                MessageBox.Show("导出成功");
+            }
+            else
+            {
+                MessageBox.Show("导出失败");
+            }
+        }
+        #region 方法--dgv导出到txt
+        //导出到txt
+        //strFileName文件名，strSplit文件中数据间的分隔符
+        public static bool DataTableToTxt(DataGridView gridview, string strFileName, char strSplit)
+        {
+            if (gridview == null || gridview.Rows.Count == 0)
+                return false;
+
+            FileStream fileStream = new FileStream(strFileName, FileMode.OpenOrCreate);
+            StreamWriter streamWriter = new StreamWriter(fileStream, System.Text.Encoding.UTF8);
+
+            StringBuilder strBuilder = new StringBuilder();
+
+            try
+            {
+                for (int i = 0; i < gridview.Rows.Count - 1; i++)
+                {
+                    strBuilder = new StringBuilder();
+                    for (int j = 0; j < gridview.Columns.Count; j++)
+                    {
+                        strBuilder.Append(gridview.Rows[i].Cells[j].Value.ToString() + strSplit);
+                    }
+                    strBuilder.Remove(strBuilder.Length - 1, 1); // 将最后添加的一个strSplit删除掉
+                    streamWriter.WriteLine(strBuilder.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                string strErrorMessage = ex.Message;
+                return false;
+            }
+            finally
+            {
+                streamWriter.Close();
+                fileStream.Close();
+            }
+
+            return true;
+        }
+        #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            for(int i=0; i<dataGridView1.Rows.Count; i++)
+            {
+                chart1.Series[0].Points.AddXY(dataGridView1.Rows[i].Cells[2].Value,dataGridView1.Rows[i].Cells[3].Value);
+            }
         }
     }
 }

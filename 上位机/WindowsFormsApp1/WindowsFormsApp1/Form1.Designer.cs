@@ -32,7 +32,6 @@ namespace WindowsFormsApp1
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_guangpu = new System.Windows.Forms.Button();
             this.btn_guangzhao = new System.Windows.Forms.Button();
             this.btn_shijian = new System.Windows.Forms.Button();
             this.btn_dianzu = new System.Windows.Forms.Button();
@@ -56,7 +55,6 @@ namespace WindowsFormsApp1
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.btn_guangpu);
             this.splitContainer1.Panel2.Controls.Add(this.btn_guangzhao);
             this.splitContainer1.Panel2.Controls.Add(this.btn_shijian);
             this.splitContainer1.Panel2.Controls.Add(this.btn_dianzu);
@@ -83,17 +81,6 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 1;
             this.label1.Text = "光敏电阻特性测量实验";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_guangpu
-            // 
-            this.btn_guangpu.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_guangpu.Location = new System.Drawing.Point(139, 211);
-            this.btn_guangpu.Name = "btn_guangpu";
-            this.btn_guangpu.Size = new System.Drawing.Size(270, 53);
-            this.btn_guangpu.TabIndex = 3;
-            this.btn_guangpu.Text = "光谱特性";
-            this.btn_guangpu.UseVisualStyleBackColor = true;
-            this.btn_guangpu.Click += new System.EventHandler(this.btn_guangpu_Click);
             // 
             // btn_guangzhao
             // 
@@ -124,7 +111,7 @@ namespace WindowsFormsApp1
             this.btn_dianzu.Name = "btn_dianzu";
             this.btn_dianzu.Size = new System.Drawing.Size(270, 53);
             this.btn_dianzu.TabIndex = 0;
-            this.btn_dianzu.Text = "电阻特性";
+            this.btn_dianzu.Text = "亮暗电阻";
             this.btn_dianzu.UseVisualStyleBackColor = true;
             this.btn_dianzu.Click += new System.EventHandler(this.btn_dianzu_Click);
             // 
@@ -151,7 +138,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_guangpu;
         private System.Windows.Forms.Button btn_guangzhao;
         private System.Windows.Forms.Button btn_shijian;
         private System.Windows.Forms.Button btn_dianzu;
