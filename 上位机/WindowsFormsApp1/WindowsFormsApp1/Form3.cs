@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     public partial class Form3 : Form
     {
         int count = 0;
+        int led = 0;
         public Form3()
         {
             InitializeComponent();
@@ -110,6 +111,7 @@ namespace WindowsFormsApp1
                             str = "AA 01 01 01 00 0D";
                             sendData = strToHexByte(str.Trim());
                             serialPort1.Write(sendData, 0, sendData.Length);//发送数据
+                            led = 0;
                             break;
                         }
                     case ("蓝灯"):
@@ -117,6 +119,7 @@ namespace WindowsFormsApp1
                             str = "AA 01 01 02 00 0D";
                             sendData = strToHexByte(str.Trim());
                             serialPort1.Write(sendData, 0, sendData.Length);//发送数据
+                            led = 1;
                             break;
                         }
                     case ("绿灯"):
@@ -124,6 +127,7 @@ namespace WindowsFormsApp1
                             str = "AA 01 01 03 00 0D";
                             sendData = strToHexByte(str.Trim());
                             serialPort1.Write(sendData, 0, sendData.Length);//发送数据
+                            led = 2;
                             break;
                         }
                     case ("黄绿灯"):
@@ -131,6 +135,7 @@ namespace WindowsFormsApp1
                             str = "AA 01 01 04 00 0D";
                             sendData = strToHexByte(str.Trim());
                             serialPort1.Write(sendData, 0, sendData.Length);//发送数据
+                            led = 3;
                             break;
                         }
                     case ("黄灯"):
@@ -138,6 +143,7 @@ namespace WindowsFormsApp1
                             str = "AA 01 01 05 00 0D";
                             sendData = strToHexByte(str.Trim());
                             serialPort1.Write(sendData, 0, sendData.Length);//发送数据
+                            led = 4;
                             break;
                         }
                     case ("橘灯"):
@@ -145,6 +151,7 @@ namespace WindowsFormsApp1
                             str = "AA 01 01 06 00 0D";
                             sendData = strToHexByte(str.Trim());
                             serialPort1.Write(sendData, 0, sendData.Length);//发送数据
+                            led = 5;
                             break;
                         }
                     case ("红灯"):
@@ -152,6 +159,7 @@ namespace WindowsFormsApp1
                             str = "AA 01 01 07 00 0D";
                             sendData = strToHexByte(str.Trim());
                             serialPort1.Write(sendData, 0, sendData.Length);//发送数据
+                            led = 6;
                             break;
                         }
                     case ("白灯"):
@@ -159,6 +167,7 @@ namespace WindowsFormsApp1
                             str = "AA 01 01 08 00 0D";
                             sendData = strToHexByte(str.Trim());
                             serialPort1.Write(sendData, 0, sendData.Length);//发送数据
+                            led = 7;
                             break;
                         }
                     default:
@@ -212,11 +221,11 @@ namespace WindowsFormsApp1
                     temp = temp * 10;
                     recv2 = temp.ToString();
                 }
-                Addlist(recv1, recv2);
+                Addlist(recv1, recv2,led);
             }
            
         }
-        private void Addlist(string content1,string content2)
+        private void Addlist(string content1,string content2,int n)
         {
             this.BeginInvoke(new MethodInvoker(delegate
             {
@@ -225,6 +234,7 @@ namespace WindowsFormsApp1
                 this.dataGridView1.Rows[index].Cells[3].Value = content2;
                 this.dataGridView1.Rows[index].Cells[2].Value = content1;
                 this.dataGridView1.Rows[index].Cells[1].Value = this.comboBox3.Text;
+                this.chart1.Series[n].Points.AddXY(int.Parse(content1), int.Parse(content2));
             }));
         }
         static string GetBytesString(byte[] bytes, int index, int count, string sep)
@@ -290,13 +300,9 @@ namespace WindowsFormsApp1
         }
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
-            
-            for(int i=0; i<dataGridView1.Rows.Count; i++)
-            {
-                chart1.Series[0].Points.AddXY(dataGridView1.Rows[i].Cells[2].Value,dataGridView1.Rows[i].Cells[3].Value);
-            }
+
         }
     }
 }

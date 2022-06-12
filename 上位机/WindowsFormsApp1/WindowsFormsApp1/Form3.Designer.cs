@@ -30,8 +30,15 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.fanhui = new System.Windows.Forms.Button();
             this.port = new System.Windows.Forms.Button();
@@ -40,6 +47,10 @@ namespace WindowsFormsApp1
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button5 = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dianzuzhi_input = new System.Windows.Forms.Button();
@@ -47,11 +58,6 @@ namespace WindowsFormsApp1
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.LED_color = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,7 +85,6 @@ namespace WindowsFormsApp1
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.chart1);
@@ -88,7 +93,7 @@ namespace WindowsFormsApp1
             this.splitContainer1.Panel2.Controls.Add(this.comboBox3);
             this.splitContainer1.Panel2.Controls.Add(this.LED_color);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(819, 681);
+            this.splitContainer1.Size = new System.Drawing.Size(1013, 681);
             this.splitContainer1.SplitterDistance = 96;
             this.splitContainer1.TabIndex = 31;
             // 
@@ -157,12 +162,42 @@ namespace WindowsFormsApp1
             this.Column4,
             this.Column2,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(459, 60);
+            this.dataGridView1.Location = new System.Drawing.Point(55, 144);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(314, 494);
+            this.dataGridView1.Size = new System.Drawing.Size(326, 377);
             this.dataGridView1.TabIndex = 35;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "序号";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "颜色";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "numx";
+            this.Column2.HeaderText = "光照度数据";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "numy";
+            this.Column3.HeaderText = "阻值";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // button5
             // 
@@ -176,23 +211,61 @@ namespace WindowsFormsApp1
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            this.chart1.Location = new System.Drawing.Point(35, 140);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Location = new System.Drawing.Point(440, 24);
             this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Purple;
+            series1.MarkerBorderColor = System.Drawing.Color.Purple;
+            series1.MarkerColor = System.Drawing.Color.Purple;
+            series1.Name = "Series1";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Name = "Series1";
+            series2.Color = System.Drawing.Color.Blue;
+            series2.Name = "Series2";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.Green;
+            series3.Name = "Series3";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Color = System.Drawing.Color.YellowGreen;
+            series4.Name = "Series4";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.Yellow;
+            series5.Name = "Series5";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Color = System.Drawing.Color.Orange;
+            series6.Name = "Series6";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Color = System.Drawing.Color.Red;
+            series7.Name = "Series7";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Color = System.Drawing.Color.Black;
+            series8.Name = "Series8";
+            this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(380, 359);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
+            this.chart1.Size = new System.Drawing.Size(561, 520);
             this.chart1.TabIndex = 32;
             this.chart1.Text = "chart1";
             // 
             // dianzuzhi_input
             // 
-            this.dianzuzhi_input.Location = new System.Drawing.Point(129, 92);
+            this.dianzuzhi_input.Location = new System.Drawing.Point(129, 86);
             this.dianzuzhi_input.Name = "dianzuzhi_input";
-            this.dianzuzhi_input.Size = new System.Drawing.Size(166, 23);
+            this.dianzuzhi_input.Size = new System.Drawing.Size(166, 29);
             this.dianzuzhi_input.TabIndex = 30;
             this.dianzuzhi_input.Text = "开始测量";
             this.dianzuzhi_input.UseVisualStyleBackColor = true;
@@ -200,9 +273,9 @@ namespace WindowsFormsApp1
             // 
             // btn_setcolor
             // 
-            this.btn_setcolor.Location = new System.Drawing.Point(323, 45);
+            this.btn_setcolor.Location = new System.Drawing.Point(323, 44);
             this.btn_setcolor.Name = "btn_setcolor";
-            this.btn_setcolor.Size = new System.Drawing.Size(92, 23);
+            this.btn_setcolor.Size = new System.Drawing.Size(92, 24);
             this.btn_setcolor.TabIndex = 28;
             this.btn_setcolor.Text = "设置";
             this.btn_setcolor.UseVisualStyleBackColor = true;
@@ -240,56 +313,17 @@ namespace WindowsFormsApp1
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(77, 529);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 25);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "绘图";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "序号";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "颜色";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "numx";
-            this.Column2.HeaderText = "光照度数据";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "numy";
-            this.Column3.HeaderText = "阻值";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 681);
+            this.ClientSize = new System.Drawing.Size(1013, 681);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form3";
             this.Text = "光照特性";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -318,7 +352,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

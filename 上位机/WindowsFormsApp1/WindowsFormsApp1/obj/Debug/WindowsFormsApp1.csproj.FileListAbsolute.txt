@@ -24,3 +24,4 @@ C:\Users\tangw\OneDrive\Desktop\stm32\上位机\WindowsFormsApp1\WindowsFormsApp
 C:\Users\tangw\OneDrive\Desktop\stm32\上位机\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\tangw\OneDrive\Desktop\stm32\上位机\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\tangw\OneDrive\Desktop\stm32\上位机\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\stm32\上位机\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache

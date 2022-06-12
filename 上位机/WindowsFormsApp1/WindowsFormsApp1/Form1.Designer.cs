@@ -96,7 +96,7 @@ namespace WindowsFormsApp1
             // btn_shijian
             // 
             this.btn_shijian.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_shijian.Location = new System.Drawing.Point(139, 289);
+            this.btn_shijian.Location = new System.Drawing.Point(139, 217);
             this.btn_shijian.Name = "btn_shijian";
             this.btn_shijian.Size = new System.Drawing.Size(270, 53);
             this.btn_shijian.TabIndex = 1;
