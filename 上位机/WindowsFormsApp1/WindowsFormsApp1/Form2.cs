@@ -443,8 +443,9 @@ namespace WindowsFormsApp1
             {
                 if(double.TryParse(textBox1.Text,out double dou)==false)
                 {
-                    MessageBox.Show("输入的DAC有问题，可能是输入了两个小数点");
                     this.textBox1.Clear();
+                    MessageBox.Show("输入的DAC有问题，可能是输入了两个小数点");
+                    
                 }                
                 else
                 {
