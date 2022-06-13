@@ -426,6 +426,11 @@ namespace WindowsFormsApp1
         {
             if (!(Char.IsNumber(e.KeyChar)) && e.KeyChar != (char)8 && e.KeyChar != (char)46)
                 e.Handled = true;
+            if(e.KeyChar == (char)46)
+            {
+                if(textBox1.Text.Length<=0)
+                    e.Handled = true;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -436,15 +441,22 @@ namespace WindowsFormsApp1
             }
             else
             {
-                double dou=double.Parse(textBox1.Text);
-                if (dou <= 3.3)
-                {   
-                    return;
-                }
+                if(double.TryParse(textBox1.Text,out double dou)==false)
+                {
+                    MessageBox.Show("输入的DAC有问题，可能是输入了两个小数点");
+                    this.textBox1.Clear();
+                }                
                 else
                 {
-                    MessageBox.Show("仅支持的DAC范围为0-3.3");
-                    textBox1.Clear();
+                    if (dou <= 3.3)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("仅支持的DAC范围为0-3.3");
+                        textBox1.Clear();
+                    }
                 }
             }
             textBox1.SelectionStart = textBox1.Text.Length;
