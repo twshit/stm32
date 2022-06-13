@@ -42,5 +42,10 @@ namespace WindowsFormsApp1
             f5.Owner = this;
             f5.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("这是光电系统集成课程的上位机程序" + "\r\n" + "仅适用于本课题的光敏电阻特性测量" + "\r\n");
+        }
     }
 }

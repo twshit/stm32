@@ -35,6 +35,7 @@ namespace WindowsFormsApp1
             this.btn_guangzhao = new System.Windows.Forms.Button();
             this.btn_shijian = new System.Windows.Forms.Button();
             this.btn_dianzu = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -55,6 +56,7 @@ namespace WindowsFormsApp1
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.btn_guangzhao);
             this.splitContainer1.Panel2.Controls.Add(this.btn_shijian);
             this.splitContainer1.Panel2.Controls.Add(this.btn_dianzu);
@@ -84,8 +86,9 @@ namespace WindowsFormsApp1
             // 
             // btn_guangzhao
             // 
+            this.btn_guangzhao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_guangzhao.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_guangzhao.Location = new System.Drawing.Point(139, 133);
+            this.btn_guangzhao.Location = new System.Drawing.Point(155, 143);
             this.btn_guangzhao.Name = "btn_guangzhao";
             this.btn_guangzhao.Size = new System.Drawing.Size(270, 53);
             this.btn_guangzhao.TabIndex = 2;
@@ -95,8 +98,9 @@ namespace WindowsFormsApp1
             // 
             // btn_shijian
             // 
+            this.btn_shijian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_shijian.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_shijian.Location = new System.Drawing.Point(139, 217);
+            this.btn_shijian.Location = new System.Drawing.Point(155, 235);
             this.btn_shijian.Name = "btn_shijian";
             this.btn_shijian.Size = new System.Drawing.Size(270, 53);
             this.btn_shijian.TabIndex = 1;
@@ -106,14 +110,27 @@ namespace WindowsFormsApp1
             // 
             // btn_dianzu
             // 
+            this.btn_dianzu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_dianzu.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_dianzu.Location = new System.Drawing.Point(139, 55);
+            this.btn_dianzu.Location = new System.Drawing.Point(155, 59);
             this.btn_dianzu.Name = "btn_dianzu";
             this.btn_dianzu.Size = new System.Drawing.Size(270, 53);
             this.btn_dianzu.TabIndex = 0;
             this.btn_dianzu.Text = "亮暗电阻";
             this.btn_dianzu.UseVisualStyleBackColor = true;
             this.btn_dianzu.Click += new System.EventHandler(this.btn_dianzu_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("宋体", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(507, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "关于";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
@@ -126,6 +143,7 @@ namespace WindowsFormsApp1
             this.Text = "光敏电阻特性测量实验";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -141,6 +159,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button btn_guangzhao;
         private System.Windows.Forms.Button btn_shijian;
         private System.Windows.Forms.Button btn_dianzu;
+        private System.Windows.Forms.Label label2;
     }
 }
 

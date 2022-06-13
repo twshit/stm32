@@ -184,43 +184,50 @@ namespace WindowsFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            byte[] sendData = null;
-            string tte = textBox1.Text;
-            double zu=double.Parse(tte);
-            double temp = zu * 4096 / 3.3;
-            if(temp==4096)
+            if(serialPort1.IsOpen)
             {
-                temp -= 1;
-            }
-            int DAC = (int)Math.Floor(temp);
-            string strd = DAC.ToString("X");
-            byte[] sendDatad = null;
-            sendDatad = strToHexByte(strd.Trim());
-            byte[] sendData1 = null;
-            byte[] sendData2 = null;
-            string str1 = "AA 01 02 ";
-            string str2 = "0D";
-            string strt = "00";
-            sendData = null;
-            sendData1 = strToHexByte(str1.Trim());
-            sendData2 = strToHexByte(str2.Trim());
-            byte[] sendDatat = strToHexByte(strt.Trim());
-            if(sendDatad.Length==1)
-            {
-                sendData = new byte[sendData1.Length + sendDatad.Length + sendData2.Length+sendDatat.Length];
-                sendData1.CopyTo(sendData, 0);
-                sendDatat.CopyTo(sendData, sendData1.Length);
-                sendDatad.CopyTo(sendData, sendData1.Length+sendDatat.Length);
-                sendData2.CopyTo(sendData, sendDatad.Length + sendData1.Length+sendDatat.Length);
+                byte[] sendData = null;
+                string tte = textBox1.Text;
+                double zu = double.Parse(tte);
+                double temp = zu * 4096 / 3.3;
+                if (temp == 4096)
+                {
+                    temp -= 1;
+                }
+                int DAC = (int)Math.Floor(temp);
+                string strd = DAC.ToString("X");
+                byte[] sendDatad = null;
+                sendDatad = strToHexByte(strd.Trim());
+                byte[] sendData1 = null;
+                byte[] sendData2 = null;
+                string str1 = "AA 01 02 ";
+                string str2 = "0D";
+                string strt = "00";
+                sendData = null;
+                sendData1 = strToHexByte(str1.Trim());
+                sendData2 = strToHexByte(str2.Trim());
+                byte[] sendDatat = strToHexByte(strt.Trim());
+                if (sendDatad.Length == 1)
+                {
+                    sendData = new byte[sendData1.Length + sendDatad.Length + sendData2.Length + sendDatat.Length];
+                    sendData1.CopyTo(sendData, 0);
+                    sendDatat.CopyTo(sendData, sendData1.Length);
+                    sendDatad.CopyTo(sendData, sendData1.Length + sendDatat.Length);
+                    sendData2.CopyTo(sendData, sendDatad.Length + sendData1.Length + sendDatat.Length);
+                }
+                else
+                {
+                    sendData = new byte[sendData1.Length + sendDatad.Length + sendData2.Length];
+                    sendData1.CopyTo(sendData, 0);
+                    sendDatad.CopyTo(sendData, sendData1.Length);
+                    sendData2.CopyTo(sendData, sendDatad.Length + sendData1.Length);
+                }
+                serialPort1.Write(sendData, 0, sendData.Length);//发送数据
             }
             else
             {
-                sendData= new byte[sendData1.Length + sendDatad.Length+ sendData2.Length];
-                sendData1.CopyTo(sendData, 0);
-                sendDatad.CopyTo(sendData, sendData1.Length);
-                sendData2.CopyTo(sendData, sendDatad.Length+ sendData1.Length);
+                MessageBox.Show("串口未打开", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            serialPort1.Write(sendData, 0, sendData.Length);//发送数据
         }
 
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
@@ -413,6 +420,34 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("导出失败");
             }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsNumber(e.KeyChar)) && e.KeyChar != (char)8 && e.KeyChar != (char)46)
+                e.Handled = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+
+            }
+            else
+            {
+                double dou=double.Parse(textBox1.Text);
+                if (dou <= 3.3)
+                {   
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("仅支持的DAC范围为0-3.3");
+                    textBox1.Clear();
+                }
+            }
+            textBox1.SelectionStart = textBox1.Text.Length;
         }
     }
 }

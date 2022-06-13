@@ -300,9 +300,5 @@ namespace WindowsFormsApp1
         }
         #endregion
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

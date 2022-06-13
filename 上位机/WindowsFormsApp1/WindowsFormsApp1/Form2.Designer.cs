@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
             // 
             this.button7.Location = new System.Drawing.Point(751, 30);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 31);
+            this.button7.Size = new System.Drawing.Size(100, 31);
             this.button7.TabIndex = 14;
             this.button7.Text = "查询光照度";
             this.button7.UseVisualStyleBackColor = true;
@@ -114,13 +114,14 @@ namespace WindowsFormsApp1
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 15;
-            this.listBox3.Location = new System.Drawing.Point(870, 30);
+            this.listBox3.Location = new System.Drawing.Point(870, 35);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(120, 34);
+            this.listBox3.Size = new System.Drawing.Size(120, 19);
             this.listBox3.TabIndex = 13;
             // 
             // fanhui
             // 
+            this.fanhui.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fanhui.Location = new System.Drawing.Point(583, 35);
             this.fanhui.Name = "fanhui";
             this.fanhui.Size = new System.Drawing.Size(106, 29);
@@ -131,6 +132,7 @@ namespace WindowsFormsApp1
             // 
             // port
             // 
+            this.port.Cursor = System.Windows.Forms.Cursors.Hand;
             this.port.Location = new System.Drawing.Point(447, 34);
             this.port.Name = "port";
             this.port.Size = new System.Drawing.Size(105, 29);
@@ -141,6 +143,8 @@ namespace WindowsFormsApp1
             // 
             // comboBox2
             // 
+            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "115200"});
@@ -160,6 +164,8 @@ namespace WindowsFormsApp1
             // 
             // comboBox1
             // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(94, 38);
             this.comboBox1.Name = "comboBox1";
@@ -207,6 +213,7 @@ namespace WindowsFormsApp1
             // 
             // button6
             // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Location = new System.Drawing.Point(298, 59);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
@@ -221,10 +228,13 @@ namespace WindowsFormsApp1
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(155, 25);
             this.textBox1.TabIndex = 13;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(107, 461);
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Location = new System.Drawing.Point(144, 461);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(168, 29);
             this.button5.TabIndex = 26;
@@ -234,9 +244,10 @@ namespace WindowsFormsApp1
             // 
             // dianzuzhi_input
             // 
+            this.dianzuzhi_input.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dianzuzhi_input.Location = new System.Drawing.Point(298, 103);
             this.dianzuzhi_input.Name = "dianzuzhi_input";
-            this.dianzuzhi_input.Size = new System.Drawing.Size(75, 23);
+            this.dianzuzhi_input.Size = new System.Drawing.Size(91, 23);
             this.dianzuzhi_input.TabIndex = 21;
             this.dianzuzhi_input.Text = "开始测量";
             this.dianzuzhi_input.UseVisualStyleBackColor = true;
@@ -244,6 +255,7 @@ namespace WindowsFormsApp1
             // 
             // btn_setcolor
             // 
+            this.btn_setcolor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_setcolor.Location = new System.Drawing.Point(298, 23);
             this.btn_setcolor.Name = "btn_setcolor";
             this.btn_setcolor.Size = new System.Drawing.Size(75, 23);
@@ -263,6 +275,8 @@ namespace WindowsFormsApp1
             // 
             // comboBox3
             // 
+            this.comboBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "关闭",
@@ -358,9 +372,10 @@ namespace WindowsFormsApp1
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(359, 55);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(92, 23);
             this.button2.TabIndex = 24;
             this.button2.Text = "开始测量";
             this.button2.UseVisualStyleBackColor = true;
@@ -386,6 +401,7 @@ namespace WindowsFormsApp1
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(146, 461);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 29);
@@ -433,7 +449,7 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(1002, 652);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form2";
-            this.Text = "电阻特性";
+            this.Text = "亮暗电阻";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load_1);
